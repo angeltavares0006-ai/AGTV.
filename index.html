@@ -41,7 +41,8 @@ const { useEffect } = React;
 
 /* ===== DATOS EDITABLES ===== */
 const PHOTO = IMG.retrato; // tu fotografía
-const SOCIAL = { Instagram: "", Behance: "", GitHub: "" }; // pega tus URLs reales
+const SOCIAL = { Instagram: "https://www.instagram.com/angelvaz_q10" }; // agrega más redes aquí
+const PHONE = { tel: "+524761267491", label: "+52 476 126 7491" };
 const EMAIL = "angeltavares0006@gmail.com";
 const PROJECTS = [
  { slug:"identidad-gastronomica", cat:"Branding", title:"Identidad visual para emprendimiento gastronómico",
@@ -141,6 +142,7 @@ const Contact = () => h`<section id="contacto" class="py-32 bg-[#191919] text-[#
  <h2 class="d text-[clamp(2.8rem,9vw,8rem)]">¿Tienes una idea?<br/><span style=${{color:"var(--o)"}}>Hagámosla realidad.</span></h2>
  <div class="mt-14 grid md:grid-cols-2 gap-10">
   <div><p class="text-xs tracking-widest uppercase opacity-60">Correo</p><a class="ul text-xl md:text-2xl break-all" href=${"mailto:"+EMAIL}>${EMAIL}</a>
+   <p class="text-xs tracking-widest uppercase opacity-60 mt-8">Teléfono</p><a class="ul text-xl" href=${"tel:"+PHONE.tel}>${PHONE.label}</a>
    <p class="text-xs tracking-widest uppercase opacity-60 mt-8">Ubicación</p><p>León / Purísima del Rincón, Guanajuato, México.</p></div>
   <ul class="flex gap-6 md:justify-end items-start">${Object.entries(SOCIAL).map(([n,u])=>h`<li key=${n}>${u?h`<a class="ul" href=${u} target="_blank" rel="noopener noreferrer">${n}</a>`:h`<span class="opacity-40" title="Enlace pendiente">${n}</span>`}</li>`)}</ul>
  </div></div></section>`;
